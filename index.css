@@ -1,0 +1,277 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    order: -1;
+    grid-column: span 2;
+    text-align: center;
+    margin: 0;
+}
+
+.container {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 4fr 0.75fr;
+    gap: 20px;
+    margin: 10px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(325px, 0.75fr));
+    gap: 10px;
+}
+
+.card {
+    background-color: #ebeaea;
+    border: 1px solid #ccc;
+    display: grid;
+    border-radius: 8px;
+    padding: 10px;
+    max-height: 175px;
+    transition: all 0.25s;
+    overflow:hidden;
+}
+
+.card:hover {
+    background-color: #dddddd;
+    box-shadow: 2.5px 2.5px 2.5px rgb(23, 23, 23);
+}
+
+.card img {
+    border-radius: 8px;
+    width: 150px;
+    height: 100px;
+}
+
+.title-tablet {
+    display: none;
+}
+    
+footer #contact {
+    color: rgb(36, 154, 177);
+}
+
+footer #contact:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+    
+.filters label {
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    display: block;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color .2s;
+}
+
+.filters label:hover {
+    background-color: #dddddd;
+}
+
+.container > input[type="radio"] {
+    display: none;
+}
+
+@media screen and (min-width: 730px) {
+    #cake:checked ~ .grid .card:not(.cake),
+    #muffin:checked ~ .grid .card:not(.tistechko),
+    #pancake:checked ~ .grid .card:not(.sirniki),
+    #roll:checked ~ .grid .card:not(.rulet),
+    #pie:checked ~ .grid .card:not(.pyrig) {
+        opacity: 0.05;
+    }
+}
+
+@media screen and (min-width: 375px) and (max-width: 730px) {
+    #cake:checked ~ .grid .card:not(.cake),
+    #muffin:checked ~ .grid .card:not(.tistechko),
+    #pancake:checked ~ .grid .card:not(.sirniki),
+    #roll:checked ~ .grid .card:not(.rulet),
+    #pie:checked ~ .grid .card:not(.pyrig) {
+        display: none;
+    }
+
+    .filters {
+        grid-row: 2;
+    }
+
+    .filters .filter-group {
+        display: grid;
+        gap: 15px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .grid {
+        grid-row: 3;
+        grid-template-columns: 1fr;
+    }
+
+    .title {
+        display: none;
+    }
+
+    .title-tablet {
+        display: none;
+    }
+
+    .card .description {
+        display: none;
+    }
+
+    .card {
+        width: 85vw;
+        min-height: 30vh;
+    }
+    
+    .card img {
+        border-radius: 8px;
+        width: 100%;
+        height: 100%;
+    }
+
+    #filtergroup-static {
+        display: none;
+    }
+
+    footer {
+        grid-row: 4;
+        display: grid;
+    }
+
+    footer .contacts {
+        display: grid;
+    }
+
+    footer .contacts #contact {
+        grid-row: 2;
+    }
+    
+    footer #copyright-text {
+        grid-row: 3;
+        grid-column: 1;
+        display: grid;
+    }
+}
+
+@media screen and (min-width: 730px) and (max-width: 1200px) {
+    .container .grid .card .title-tablet {
+        display: inline;
+        padding-top: 5%;
+    }
+
+    .filters {
+        grid-row: 2;
+    }
+
+    .filters .filter-group {
+        display: grid;
+        gap: 15px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .grid {
+        grid-row: 3;
+        width: 97.5vw;
+    }
+
+    .title {
+        display: none;
+    }
+
+    .card .description {
+        display: none;
+    }
+    
+    .card img {
+        border-radius: 8px;
+        width: 100%;
+        height: 100%;
+    }
+
+    #filtergroup-static {
+        display: none;
+    }
+
+    .title-tablet {
+        display: none;
+    }
+
+    footer {
+        grid-row: 4;
+        display: grid;
+    }
+
+    footer .contacts {
+        display: grid;
+    }
+
+    footer .contacts #contact {
+        grid-row: 2;
+    }
+    
+    footer #copyright-text {
+        grid-row: 1;
+        grid-column: 2;
+        text-align: right;
+        display: grid;
+        align-items: center;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    footer {
+        order: 3;
+        grid-column: span 2;
+        margin-top: 20px;
+        font-size: 0.9em;
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+    
+    footer #copyright-text {
+        text-align: right;
+    }
+
+    #envelope-icon {
+        display: none;
+    }
+
+    .filters {
+        order: 1;
+        background-color: #ebeaea;
+        border: 1px solid #ccc;
+        padding: 20px;
+        border-radius: 8px;
+    }
+    
+    .filters .filter-group {
+        margin-bottom: 20px;
+    }
+    
+    .container .filters .filter-group > input[type="range"] {
+        width: 100%;
+    }
+
+    .card .title {
+        font-size: 1em;
+        max-height: 125px;
+        width: 175px;
+        max-width: 125px;
+    }
+
+    .card .description {
+        min-height: 50px;
+        grid-column: span 3;
+        border-top: 1px solid #ccc;
+        padding-top: 10px;
+        margin-top: 10px;
+    }
+}

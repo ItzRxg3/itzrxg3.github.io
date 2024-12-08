@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adaptive Design | Kozachok</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Henny+Penny&family=Poppins&family=Slabo+27px&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Тортики <span style="color: red; font-size: 22px; font-family: 'Henny Penny', system-ui;">&</span> Тістечка</h2>
+
+        <input type="radio" name="type" id="cake" value="Торт">
+        <input type="radio" name="type" id="roll" value="Рулет">
+        <input type="radio" name="type" id="muffin" value="Тістечко">
+        <input type="radio" name="type" id="pancake" value="Сирники">
+        <input type="radio" name="type" id="pie" value="Пиріг">
+        <input type="radio" name="type" id="reset" value="Скинути фільтр" checked>
+
+        <div class="grid">
+            <div class="card cake">
+                <img src="./img/smetankoviy_tort.jpg" alt="Сметанковий">
+                <div class="title-tablet">Торт: <b>Сметанковий</b></div>
+                <div class="title" style="white-space: pre-line">Торт:
+                    <b>Сметанковий</b>
+                </div>
+                <div class="description">Калорії у порції 265 кКал</div>
+            </div>
+            <div class="card tistechko">
+                <img src="./img/tistechko_mafin.jpg" alt="Маффін">
+                <div class="title-tablet">Тістечко: <b>Мафін</b></div>
+                <div class="title" style="white-space: pre-line">Тістечко:
+                    <b>Мафін</b>
+                </div>
+                <div class="description">Калорії у порції 305 кКал</div>
+            </div>
+            <div class="card sirniki">
+                <img src="./img/sirniki_z_yagodami.jpg" alt="Сирники">
+                <div class="title-tablet">Сирники: <b>Три ягоди</b></div>
+                <div class="title" style="white-space: pre-line">Сирники:
+                    <b>Три ягоди</b>
+                </div>
+                <div class="description">Калорії у порції 450 кКал</div>
+            </div>
+            <div class="card cake">
+                <img src="./img/tort_smachniy.jpg" alt="Смачний">
+                <div class="title-tablet">Торт: <b>Смачний</b></div>
+                <div class="title" style="white-space: pre-line">Торт:
+                    <b>Смачний</b>
+                </div>
+                <div class="description">Калорії у порції 523 кКал</div>
+            </div>
+            <div class="card rulet">
+                <img src="./img/svyatkoviy_rulet.jpg" alt="Святковий">
+                <div class="title-tablet">Рулет: <b>Святковий</b></div>
+                <div class="title" style="white-space: pre-line">Рулет:
+                    <b>Святковий</b>
+                </div>
+                <div class="description">Калорії у порції 380 кКал</div>
+            </div>
+            <div class="card pyrig">
+                <img src="./img/svyato_u_babusi.jpg" alt="Свято у бабусі">
+                <div class="title-tablet">Пиріг: <b>Свято у бабусі</b></div>
+                <div class="title" style="white-space: pre-line">Пиріг:
+                    <b>Свято у бабусі</b>
+                </div>
+                <div class="description">Калорії у порції 298 кКал</div>
+            </div>
+            <div class="card cake">
+                <img src="./img/tort_vedmedik.jpg" alt="Ведмедик">
+                <div class="title-tablet">Торт: <b>Ведмедик</b></div>
+                <div class="title" style="white-space: pre-line">Торт:
+                    <b>Ведмедик</b>
+                </div>
+                <div class="description">Калорії у порції 600 кКал</div>
+            </div>
+            <div class="card tistechko">
+                <img src="./img/tistechko_zhivi_kviti.jpg" alt="Живі квіти">
+                <div class="title-tablet">Тістечко: <b>Живі квіти</b></div>
+                <div class="title" style="white-space: pre-line">Тістечко:
+                    <b>Живі квіти</b>
+                </div>
+                <div class="description">Калорії у порції 438 кКал</div>
+            </div>
+            <div class="card tistechko">
+                <img src="./img/tistechko_lymonne_z_makom.jpg" alt="Лимонне з маком">
+                <div class="title-tablet">Тістечко: <b>Лимонне з маком</b></div>
+                <div class="title" style="white-space: pre-line">Тістечко:
+                    <b>Лимонне з маком</b>
+                </div>
+                <div class="description">Калорії у порції 348 кКал</div>
+            </div>
+        </div>
+
+        <div class="filters">
+            <div class="filter-group" id="filtergroup-static">
+                <p style="margin: 0; font-size: 14px;">Калорії у порції</p>
+                <input type="range" id="calories" min="0" max="1200" step="50" value="100">
+                <p style="text-align: center; margin: 0; font-size: 14px;">Від 100 до 400 кКал</p>
+            </div>
+            <div class="filter-group">
+                <div>
+                    <label for="cake">Торт</label>
+                </div>
+                <div>
+                    <label for="roll">Рулет</label>
+                </div>
+                <div>
+                    <label for="muffin">Тістечко</label>
+                </div>
+                <div>
+                    <label for="pancake">Сирники</label>
+                </div>
+                <div>
+                    <label for="pie">Пиріг</label>
+                </div>
+                <div>
+                    <label for="reset">Скинути фільтр</label>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="contacts">
+                <span><span id="envelope-icon">&#9993;</span>Контакти: </span>
+                <span id="contact">tortik@smakota.ua</span>
+            </div>
+            <span id="copyright-text">© 2024 Smakota</span>
+        </footer>
+    </div>
+</body>
+
+</html>
